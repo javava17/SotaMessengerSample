@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BuildOmitCheck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <javacPath>C:\Program Files\VstoneMagic\jdk\bin\javac.exe</javacPath>
+  <argument> -d "C:\Users\STC-intern-7\SotaMessengerSample\client\sotaimple\SotaWebsocketTalker\bin"  -g  -cp ".;C:\Users\STC-intern-7\VstoneMagicData\jar\core-2.2.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\javase-2.2.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\opencv-310.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\sotalib.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\STC-intern-7\SotaMessengerSample\lib\tyrus-standalone-client-1.13.jar"  -encoding UTF-8 </argument>
+  <files>
+    <FileData>
+      <path>jp\co\mysota\mymain.java</path>
+      <timestamp>2016-08-31T15:12:03.6041299+09:00</timestamp>
+      <size>1060</size>
+      <ignore>true</ignore>
+    </FileData>
+    <FileData>
+      <path>jp\co\mysota\WebsocketMessenger.java</path>
+      <timestamp>2016-09-02T11:03:07.9607974+09:00</timestamp>
+      <size>4725</size>
+      <ignore>true</ignore>
+    </FileData>
+    <FileData>
+      <path>jp\co\mysota\Start.java</path>
+      <timestamp>2016-09-02T13:58:02.9527122+09:00</timestamp>
+      <size>32716</size>
+      <ignore>false</ignore>
+    </FileData>
+    <FileData>
+      <path>jp\co\mysota\End.java</path>
+      <timestamp>2016-08-31T17:15:08.8063946+09:00</timestamp>
+      <size>1317</size>
+      <ignore>true</ignore>
+    </FileData>
+  </files>
+</BuildOmitCheck>

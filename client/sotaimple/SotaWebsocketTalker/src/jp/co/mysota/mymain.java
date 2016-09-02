@@ -19,8 +19,10 @@ public class mymain
 	public void main()																									//@<BlockInfo>jp.vstone.block.func,32,144,272,144,False,2,コメント@</BlockInfo>
 	throws SpeechRecogAbortException {
 		if(!GlobalVariable.TRUE) throw new SpeechRecogAbortException("default");
+
 																														//@<OutputChild>
 																														//@</OutputChild>
+
 	}																													//@<EndOfBlock/>
 
 }

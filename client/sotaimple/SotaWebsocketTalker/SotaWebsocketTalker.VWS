@@ -6,49 +6,49 @@
 	</_execOption>
 	<_globalVariables>
 		<MemberValueObject>
-			<initialize>new CRobotMem()</initialize>
+			<initialize>(CRobotMem)new CRobotMem()</initialize>
 			<memberVariableLine>0</memberVariableLine>
 			<name>mem</name>
 			<parentPb i:nil="true" />
 			<type>CRobotMem</type>
 		</MemberValueObject>
 		<MemberValueObject>
-			<initialize>new CSotaMotion(mem)</initialize>
+			<initialize>(CSotaMotion)new CSotaMotion(mem)</initialize>
 			<memberVariableLine>0</memberVariableLine>
 			<name>motion</name>
 			<parentPb i:nil="true" />
 			<type>CSotaMotion</type>
 		</MemberValueObject>
 		<MemberValueObject>
-			<initialize>true</initialize>
+			<initialize>(boolean)true</initialize>
 			<memberVariableLine>0</memberVariableLine>
 			<name>InitServoOn</name>
 			<parentPb i:nil="true" />
 			<type>boolean</type>
 		</MemberValueObject>
 		<MemberValueObject>
-			<initialize>true</initialize>
+			<initialize>(boolean)true</initialize>
 			<memberVariableLine>0</memberVariableLine>
 			<name>TRUE</name>
 			<parentPb i:nil="true" />
 			<type>boolean</type>
 		</MemberValueObject>
 		<MemberValueObject>
-			<initialize></initialize>
+			<initialize i:nil="true" />
 			<memberVariableLine>0</memberVariableLine>
 			<name>recvReturnValue</name>
 			<parentPb i:nil="true" />
 			<type>Object</type>
 		</MemberValueObject>
 		<MemberValueObject>
-			<initialize>new SpeechRecog(motion)</initialize>
+			<initialize>(SpeechRecog)new SpeechRecog(motion)</initialize>
 			<memberVariableLine>0</memberVariableLine>
 			<name>recog</name>
 			<parentPb i:nil="true" />
 			<type>SpeechRecog</type>
 		</MemberValueObject>
 		<MemberValueObject>
-			<initialize>new MotionAsSotaWish(motion)</initialize>
+			<initialize>(MotionAsSotaWish)new MotionAsSotaWish(motion)</initialize>
 			<memberVariableLine>0</memberVariableLine>
 			<name>sotawish</name>
 			<parentPb i:nil="true" />
@@ -61,21 +61,44 @@
 			<parentPb i:nil="true" />
 			<type>RecogResult</type>
 		</MemberValueObject>
+		<MemberValueObject>
+			<initialize>(FaceDetectResult)new FaceDetectResult()</initialize>
+			<memberVariableLine>0</memberVariableLine>
+			<name>faceresult</name>
+			<parentPb i:nil="true" />
+			<type>FaceDetectResult</type>
+		</MemberValueObject>
+		<MemberValueObject>
+			<initialize>(CRoboCamera)new CRoboCamera("/dev/video0",motion)</initialize>
+			<memberVariableLine>0</memberVariableLine>
+			<name>robocam</name>
+			<parentPb i:nil="true" />
+			<type>CRoboCamera</type>
+		</MemberValueObject>
+		<MemberValueObject>
+			<initialize>(int)0</initialize>
+			<memberVariableLine>0</memberVariableLine>
+			<name>detectCount</name>
+			<parentPb i:nil="true" />
+			<type>int</type>
+		</MemberValueObject>
 	</_globalVariables>
 	<_import xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 		<d2p1:string>jp.vstone.RobotLib.*</d2p1:string>
 		<d2p1:string>jp.vstone.sotatalk.SpeechRecog.*</d2p1:string>
 		<d2p1:string>jp.vstone.sotatalk.*</d2p1:string>
+		<d2p1:string>jp.vstone.camera.*</d2p1:string>
 	</_import>
 	<_isDisableCollidionDetect>false</_isDisableCollidionDetect>
 	<_isSetAutoExecute>false</_isSetAutoExecute>
-	<_mainFuncName>jp.co.mysota.TalkChecker.talkCheck()</_mainFuncName>
+	<_mainFuncName>jp.co.mysota.Start.method()</_mainFuncName>
 	<_manifestClassPath xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
 	<_target>Sota</_target>
 	<_templeteMainClassFilePath>src\mainTemplete.source</_templeteMainClassFilePath>
 	<appPropaty>
 		<_AppTitle>SotaWebsocketTalker</_AppTitle>
 		<_ApplicationType>App</_ApplicationType>
+		<_ExecOption i:nil="true" />
 		<_StartSoundFile></_StartSoundFile>
 		<_Trigger>Button</_Trigger>
 		<_TriggerOperation></_TriggerOperation>
@@ -351,13 +374,21 @@
 			</tpList>
 		</Pose>
 	</iniPoses>
-	<jarPath />
+	<jarPath>
+		<jarReference>
+			<classPath>C:\Users\STC-intern-7\SotaMessengerSample\lib\tyrus-standalone-client-1.13.jar</classPath>
+		</jarReference>
+	</jarPath>
 	<package>
 		<javaPackage>
 			<javaClass xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 				<d4p1:string>mymain.java</d4p1:string>
-				<d4p1:string>TalkChecker.java</d4p1:string>
 				<d4p1:string>WebsocketMessenger.java</d4p1:string>
+				<d4p1:string>Start.java</d4p1:string>
+				<d4p1:string>Initial.java</d4p1:string>
+				<d4p1:string>AskInterest.java</d4p1:string>
+				<d4p1:string>Recommend.java</d4p1:string>
+				<d4p1:string>End.java</d4p1:string>
 			</javaClass>
 			<name>jp.co.mysota</name>
 			<resources xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
@@ -3533,7 +3564,7 @@
 				</uintID>
 			</MotSend>
 			<debugPort>8765</debugPort>
-			<host>192.168.11.13</host>
+			<host>192.168.128.102</host>
 			<password>raspberry</password>
 			<platform>RaspberryPi</platform>
 			<rootPath>/home/pi/</rootPath>

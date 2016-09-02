@@ -67,7 +67,7 @@ public class WebsocketMessenger extends Endpoint
 		//if(!GlobalVariable.TRUE) throw new SpeechRecogAbortException("default");
 
 																														//@<OutputChild>
-		GlobalVariable.sotawish.Say((String)"セッションが開いたよ",MotionAsSotaWish.MOTION_TYPE_TALK,(int)11,(int)13,(int)11);	//@<BlockInfo>jp.vstone.block.talk.say,512,288,512,288,False,16,@</BlockInfo>
+		GlobalVariable.sotawish.Say((String)"準備ができたよ。じゃあまず、",MotionAsSotaWish.MOTION_TYPE_TALK,(int)11,(int)13,(int)11);	//@<BlockInfo>jp.vstone.block.talk.say,512,288,512,288,False,16,@</BlockInfo>
 																														//@<EndOfBlock/>
 		session.addMessageHandler(new MessageHandler.Whole<String>() {													//@<BlockInfo>jp.vstone.block.freeproc,576,288,576,288,False,15,@</BlockInfo>
 

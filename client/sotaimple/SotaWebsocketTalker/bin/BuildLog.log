@@ -1,0 +1,237 @@
+VstoneMagic Build&Execute Message Log
+BuildStart time:2016/09/02 14:11:57
+ビルドを開始します。
+C:\Program Files\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\STC-intern-7\SotaMessengerSample\client\sotaimple\SotaWebsocketTalker\bin"  -g  -cp ".;C:\Users\STC-intern-7\VstoneMagicData\jar\core-2.2.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\javase-2.2.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\opencv-310.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\sotalib.jar;C:\Users\STC-intern-7\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\STC-intern-7\SotaMessengerSample\lib\tyrus-standalone-client-1.13.jar"  -encoding UTF-8 "C:\Users\STC-intern-7\SotaMessengerSample\client\sotaimple\SotaWebsocketTalker\src\main\main.java" "C:\Users\STC-intern-7\SotaMessengerSample\client\sotaimple\SotaWebsocketTalker\src\jp\co\mysota\Start.java" 
+
+正常にコンパイルできました。
+
+jarファイルの作成
+マニフェストファイルを作成します。
+jarファイルを作成します。
+C:\Program Files\VstoneMagic\jdk\bin\jar.exe cvfm test831pm16.jar Manifest.mf main jp\co\mysota
+マニフェストが追加されました
+main/を追加中です(入=0)(出=0)(0%格納されました)
+main/main$GlobalVariable.classを追加中です(入=1583)(出=777)(50%収縮されました)
+main/main.classを追加中です(入=2187)(出=1191)(45%収縮されました)
+jp/co/mysota/を追加中です(入=0)(出=0)(0%格納されました)
+jp/co/mysota/AskInterest.classを追加中です(入=1483)(出=829)(44%収縮されました)
+jp/co/mysota/End.classを追加中です(入=940)(出=580)(38%収縮されました)
+jp/co/mysota/Initial.classを追加中です(入=2468)(出=1221)(50%収縮されました)
+jp/co/mysota/mymain.classを追加中です(入=700)(出=437)(37%収縮されました)
+jp/co/mysota/Recommend.classを追加中です(入=1477)(出=876)(40%収縮されました)
+jp/co/mysota/Start$1.classを追加中です(入=2189)(出=1169)(46%収縮されました)
+jp/co/mysota/Start.classを追加中です(入=9459)(出=3676)(61%収縮されました)
+jp/co/mysota/TalkChecker.classを追加中です(入=1324)(出=735)(44%収縮されました)
+jp/co/mysota/WebsocketMessenger$1.classを追加中です(入=1311)(出=635)(51%収縮されました)
+jp/co/mysota/WebsocketMessenger.classを追加中です(入=3103)(出=1436)(53%収縮されました)
+
+jarファイルを作成しました。
+
+送信ファイルの上書き確認
+
+スタートアップアプリケーションの停止
+echo "STOP_STARTUP" > /home/vstone/vstonemagic/menu.fifoロボットのSFTPへ接続します。
+192.168.128.102@pi
+..
+
+
+ファイルの転送
+ロボットにファイルを転送します。
+Connect to 192.168.128.102@pi...接続しました。
+ファイルの転送を開始します。
+No send:'C:\Users\STC-intern-7\SotaMessengerSample\lib\tyrus-standalone-client-1.13.jar'
+Send':'test831pm16.jar' completed
+
+
+アプリケーション登録用のアーカイブファイルを作成
+..
+ビルドが完了しました。
+
+
+jarファイルの実行
+ロボットのSSHへ接続します。
+192.168.128.102@pi
+java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar test831pm16.jar 2>&1 &Linux raspberrypi 3.18.14-v7+ #792 SMP PREEMPT Sat May 23 16:19:32 BST 2015 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Sep  2 14:11:52 2016 from 192.168.128.103
+ファイルの転送が完了しました。java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar test831pm16.jar 2>&1 &
+pi@raspberrypi:~$ java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar test831pm16.jar 2>&1 &
+[1] 3247
+pi@raspberrypi:~$ デバッグの準備ができました。
+
+jdbの実行
+デバッガを起動します。
+C:\Program Files\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.128.102,port=8765
+Listening for transport dt_socket at address: 8765
+捕捉されないjava.lang.Throwableの設定遅延した捕捉されないjava.lang.Throwableの設定jdbの初期化中...デバッグ実行のスタンバイができました。
+> VMが開始されました: 現在のコール・スタックにフレームがありません[Info][SpeechRecog]SpeechRecog
+[Info][CRoboCamera]class jp.vstone.RobotLib.CSotaMotion
+[Info][CRobotSock]Connected server
+[Info][CRobotMotion]MasterCtrlPeriod 16666
+[Info][MotionAsSotaWish][Say][scene:talk]プレゼントを贈りたい人のことを教えてください
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472535121908.wav
+java.io.FileNotFoundException: /home/vstone/vstonemagic/app/jar/app.properties (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:131)
+	at jp.vstone.RobotLib.CRobotUtil.getTimeZone(CRobotUtil.java:114)
+	at jp.vstone.sotatalk.TextToSpeechSota.postjson(TextToSpeechSota.java:765)
+	at jp.vstone.sotatalk.TextToSpeechSota.postlog(TextToSpeechSota.java:732)
+	at jp.vstone.sotatalk.TextToSpeechSota.getTTSFile(TextToSpeechSota.java:236)
+	at jp.vstone.sotatalk.MotionAsSotaWish.Say(MotionAsSotaWish.java:118)
+	at jp.co.mysota.Start.demo0901(Start.java:179)
+	at main.main.main(main.java:42)
+[Info][CPlayWave]Play /var/sota/tts//1472535121908.wav
+[Info][MotionAsSotaWish]play 3675
+[Info][MotionAsSotaWish][play][talk] [3275sec]
+[Info][MotionAsSotaWish][Say][scene:talk]準備ができたよ。じゃあまず、
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472781864158.wav
+[Info][CPlayWave]Play /var/sota/tts//1472781864158.wav
+[Info][MotionAsSotaWish]play 2958
+[Info][MotionAsSotaWish][play][talk] [2558sec]
+[Info][MotionAsSotaWish][Say][scene:talk]贈りたい人は男の子?女の子?
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472782180465.wav
+[Info][CPlayWave]Play /var/sota/tts//1472782180465.wav
+[Info][MotionAsSotaWish]play 3720
+[Info][MotionAsSotaWish][play][talk] [3320sec]
+[Info][SpeechRecog][getRecognition][Score:0.9211722612380981]女の子
+[Info][SpeechRecog][getRecognition][Score:0.7499845027923584]オンナノコ
+[Info][SpeechRecog][getRecognition][Score:0.7370337843894958]オンナのコ
+[Info][SpeechRecog][getRecognition][Score:0.6887534856796265]女の子を
+[Info][SpeechRecog][getRecognition][Score:0.7399380207061768]おんなの子
+[Info][SpeechRecog][getRecognition][Score:0.7625118494033813]おんなのこ
+[Info][SpeechRecog][getRecognition][Score:0.7450625896453857]女のこ
+[Info][MotionAsSotaWish][Say][scene:talk]女の子ですね。幼稚園？小学生？
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472718166399.wav
+[Info][CPlayWave]Play /var/sota/tts//1472718166399.wav
+[Info][MotionAsSotaWish]play 4100
+[Info][MotionAsSotaWish][play][talk] [3700sec]
+[Info][SpeechRecog][getRecognition][Score:0.8489559888839722]幼稚園
+[Info][SpeechRecog][getRecognition][Score:0.8158106207847595]絵幼稚園
+[Info][SpeechRecog][getRecognition][Score:0.8245892524719238]残り幼稚園
+[Info][SpeechRecog][getRecognition][Score:0.812736988067627]家幼稚園
+[Info][SpeechRecog][getRecognition][Score:0.8250275254249573]ですね幼稚園
+[Info][SpeechRecog][getRecognition][Score:0.8130278587341309]上詰め幼稚園
+[Info][SpeechRecog][getRecognition][Score:0.7643325328826904]小学生性
+[Info][SpeechRecog][getRecognition][Score:0.7774306297302247]少
+[Info][SpeechRecog][getRecognition][Score:0.7606916904449463]小学生学生
+[Info][SpeechRecog][getRecognition][Score:0.7611811637878418]小学生星
+[Info][SpeechRecog][getRecognition][Score:0.7855006694793701]奨学生
+[Info][SpeechRecog][getRecognition][Score:0.7836762428283692]しょうがくせい
+[Info][SpeechRecog][getRecognition][Score:0.7827723979949952]小学
+[Info][SpeechRecog][getRecognition][Score:0.9517301559448242]小学生
+[Info][MotionAsSotaWish][Say][scene:talk]小学生ですね。予算の上限はどのくらいですか？
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472719910709.wav
+[Info][CPlayWave]Play /var/sota/tts//1472719910709.wav
+[Info][MotionAsSotaWish]play 5120
+[Info][MotionAsSotaWish][play][talk] [4720sec]
+[Info][SpeechRecog][getRecognition][Score:0.9238285064697266]小学生ですね
+[Info][SpeechRecog][getRecognition][Score:0.7411941528320313]奨学生ですね
+[Info][SpeechRecog][getRecognition][Score:0.784865140914917]小学生ですねぇ
+[Info][SpeechRecog][getRecognition][Score:0.7302369117736817]小学生性ですね
+[Info][SpeechRecog][getRecognition][Score:0.740498971939087]小学ですね
+[Info][SpeechRecog][getRecognition][Score:0.7851373672485352]小学生ですよね
+[Info][SpeechRecog][getRecognition][Score:0.7418495655059815]しょうがくせいですね
+[Info][SpeechRecog][getRecognition][Score:0.7865017890930176]小学生ですねー
+[Info][SpeechRecog][getRecognition][Score:0.785435676574707]小学生ですね〜
+[Info][SpeechRecog][getRecognition][Score:0.9712368965148926]一万円
+[Info][SpeechRecog][getRecognition][Score:0.7835931777954102]イチマンエン円
+[Info][SpeechRecog][getRecognition][Score:0.7841699600219727]一万まんえん
+[Info][SpeechRecog][getRecognition][Score:0.7836891174316407]一万苑
+[Info][SpeechRecog][getRecognition][Score:0.7915382862091065]一万万円
+[Info][SpeechRecog][getRecognition][Score:0.7839271545410157]一万園
+[Info][SpeechRecog][getRecognition][Score:0.7847727775573731]一万
+[Info][SpeechRecog][getRecognition][Score:0.7913107872009277]一円
+[Info][MotionAsSotaWish][Say][scene:talk]予算は10000円ですね。趣味は何ですか？
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472782797926.wav
+[Info][CPlayWave]Play /var/sota/tts//1472782797926.wav
+[Info][MotionAsSotaWish]play 4798
+[Info][MotionAsSotaWish][play][talk] [4398sec]
+[Info][SpeechRecog][getRecognition][Score:0.5806117057800293]や予算
+[Info][SpeechRecog][getRecognition][Score:0.7389200329780579]予算
+[Info][SpeechRecog][getRecognition][Score:0.7063376903533936]ｙａｈｏｏ
+[Info][SpeechRecog][getRecognition][Score:0.7029756307601929]ヤフー
+[Info][SpeechRecog][getRecognition][Score:0.748572826385498]さん
+[Info][SpeechRecog][getRecognition][Score:0.588148832321167]屋さん
+[Info][SpeechRecog][getRecognition][Score:0.5902644991874695]やさん
+[Info][SpeechRecog][getRecognition][Score:0.6919909715652466]葉酸
+[Info][SpeechRecog][getRecognition][Score:0.7972971598307291]スポ
+[Info][SpeechRecog][getRecognition][Score:0.6805097262064616]周東
+[Info][SpeechRecog][getRecognition][Score:0.6757334073384602]ｓｐｕｒ
+[Info][SpeechRecog][getRecognition][Score:0.7106224695841471]スト
+[Info][SpeechRecog][getRecognition][Score:0.6923151810963948]ｓｐａ
+[Info][SpeechRecog][getRecognition][Score:0.6752843856811523]ストウ
+[Info][SpeechRecog][getRecognition][Score:0.6817182699839274]ｓｐｏｒｅ
+[Info][SpeechRecog][getRecognition][Score:0.6796747843424479]首藤
+[Info][SpeechRecog][getRecognition][Score:0.7155750592549641]スパ
+[Info][SpeechRecog][getRecognition][Score:0.6908752123514811]須藤
+[Info][MotionAsSotaWish][Say][scene:talk]ディズニープリンセス　4イン1　アクティビティライドオン【送料無料】
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472782810148.wav
+[Info][CPlayWave]Play /var/sota/tts//1472782810148.wav
+[Info][MotionAsSotaWish]play 5308
+[Info][MotionAsSotaWish][play][talk] [4908sec]
+[Info][SpeechRecog][getRecognition][Score:0.7500002384185791]影
+[Info][SpeechRecog][getRecognition][Score:0.7555775046348572]ディズ二ー
+[Info][SpeechRecog][getRecognition][Score:0.7548725008964539]湖
+[Info][SpeechRecog][getRecognition][Score:0.7594740986824036]水煮
+[Info][SpeechRecog][getRecognition][Score:0.7738164067268372]ｄｉｓｎｅｙ
+[Info][SpeechRecog][getRecognition][Score:0.8866007924079895]ディズニー
+[Info][SpeechRecog][getRecognition][Score:0.758041262626648]デイズニー
+[Info][SpeechRecog][getRecognition][Score:0.7607709169387817]みずぎ
+[Info][SpeechRecog][getRecognition][Score:0.7543920278549194]瑞江
+[Info][SpeechRecog][getRecognition][Score:0.6469239592552185]水ディズニー
+[Info][SpeechRecog][getRecognition][Score:0.6894648869832356]
+[Info][SpeechRecog][getRecognition][Score:0.6698074340820312]あした
+[Info][SpeechRecog][getRecognition][Score:0.6732717355092366]い
+[Info][SpeechRecog][getRecognition][Score:0.6680505275726318]お
+[Info][SpeechRecog][getRecognition][Score:0.6732818285624186]二
+[Info][SpeechRecog][getRecognition][Score:0.6679071585337321]は
+[Info][MotionAsSotaWish][Say][scene:talk]もう一回
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472715194177.wav
+[Info][CPlayWave]Play /var/sota/tts//1472715194177.wav
+[Info][MotionAsSotaWish]play 1337
+[Info][MotionAsSotaWish][play][talk] [937sec]
+[Info][SpeechRecog][getRecognition][Score:0.7288687825202942]一
+[Info][SpeechRecog][getRecognition][Score:0.6810413599014282]一介
+[Info][SpeechRecog][getRecognition][Score:0.679311990737915]立海
+[Info][SpeechRecog][getRecognition][Score:0.6859338283538818]一階
+[Info][SpeechRecog][getRecognition][Score:0.6747620105743408]委員会
+[Info][SpeechRecog][getRecognition][Score:0.6933693885803223]一回
+[Info][SpeechRecog][getRecognition][Score:0.67303866147995]海
+[Info][SpeechRecog][getRecognition][Score:0.6023525595664978]階
+[Info][SpeechRecog][getRecognition][Score:0.7643872499465942]スポ−ツ
+[Info][SpeechRecog][getRecognition][Score:0.7750391960144043]ｓｐｏｒｔｓ
+[Info][SpeechRecog][getRecognition][Score:0.7517431974411011]ｓｐｏｒｔ
+[Info][SpeechRecog][getRecognition][Score:0.9377658367156982]スポーツ
+[Info][MotionAsSotaWish][Say][scene:talk]トイザらス AVIGO　ジュニアスポーツヘルメット　ブラック　（52～55cm）【送料無料】
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1472778258443.wav
+[Info][CPlayWave]Play /var/sota/tts//1472778258443.wav
+[Info][MotionAsSotaWish]play 8059
+[Info][MotionAsSotaWish][play][talk] [7659sec]
+[Info][SpeechRecog][getRecognition][Score:0.7317308902740479]網野
+[Info][SpeechRecog][getRecognition][Score:0.7165923595428467]萩野
+[Info][SpeechRecog][getRecognition][Score:0.7739608764648438]有野
+[Info][SpeechRecog][getRecognition][Score:0.7286178588867188]アミノ
+[Info][SpeechRecog][getRecognition][Score:0.6348228454589844]有野の
+[Info][SpeechRecog][getRecognition][Score:0.737932825088501]あり
+[Info][SpeechRecog][getRecognition][Score:0.7252813339233399]上野
+[Info][SpeechRecog][getRecognition][Score:0.6773838996887207]
+[Info][SpeechRecog][getRecognition][Score:0.6675362586975098]あした
+[Info][SpeechRecog][getRecognition][Score:0.6700584093729655]い
+[Info][SpeechRecog][getRecognition][Score:0.6688893636067708]お
+[Info][SpeechRecog][getRecognition][Score:0.6701263586680094]二
+
+kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`中断します。
+
+pi@raspberrypi:~$ 
+pi@raspberrypi:~$ kill ` jps|grep "^exit[0main[1] > -9Listening for transport dt_socket at address: 8765
+]\+ jar" |awk '{print $1}'`
+exit
+[Info][MotionAsSotaWish][Say][scene:talk]もう一回
+
+ロボットとの通信を切断しました。
